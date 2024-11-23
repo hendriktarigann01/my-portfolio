@@ -12,7 +12,7 @@ const Footer = () => {
             href="https://notokrs.github.io"
             className="text-lg font-bold hover:text-blue-500 transition"
           >
-            hendrik.<span className="text-blue-500">.</span>
+            hendrik<span className="text-blue-500">.</span>
           </a>
           <p className="text-sm">Thanks for reading!</p>
           <p className="text-xs text-gray-400">

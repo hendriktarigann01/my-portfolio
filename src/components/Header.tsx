@@ -1,16 +1,13 @@
-"use client"; // Client Component
-import "../styles/globals.css";
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation"; // Menggunakan usePathname
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import {
-  faGithub,
-  faLinkedin,
-  faTwitter,
-  faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
-import { useState, useEffect } from "react";
 
 const Header = () => {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -27,10 +24,10 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Portfolio", path: "/portfolio" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
@@ -42,25 +39,24 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            {/* <div className="h-8 w-8 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold"></span>
-            </div> */}
+            <h1 className="text-white font-bold text-xl">My Website</h1>
           </div>
-
           <nav className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
-                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group"
-                aria-label={`Navigate to ${link.name} section`}
+                href={link.path}
+                className={`text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group ${
+                  pathname === link.path ? "text-purple-500" : ""
+                }`}
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200" />
-              </a>
+              </Link>
             ))}
           </nav>
 
+          {/* Tombol Mobile Menu */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -77,7 +73,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       <div
         className={`${
           isMenuOpen ? "block" : "hidden"
@@ -85,14 +81,15 @@ const Header = () => {
       >
         <div className="px-2 pt-2 pb-3 space-y-1">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
-              className="block text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
-              aria-label={`Navigate to ${link.name} section`}
+              href={link.path}
+              className={`block text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                pathname === link.path ? "text-purple-500" : ""
+              }`}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
