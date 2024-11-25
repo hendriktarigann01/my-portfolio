@@ -11,6 +11,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        navbar: "var(--navbar)",
       },
       boxShadow: {
         around: "0 0 40px 10px rgba(128, 90, 213, 0.5)",
