@@ -1,24 +1,24 @@
 export default function HomePage() {
   return (
-    <section>
+    <section className="relative bg-background flex flex-col items-center justify-evenly md:h-screen md:flex-row md:overflow-hidden">
       <div className="mt-10 mx-auto flex flex-col items-center">
         <div className="flex justify-between">
-          <div>
+          <div className="mx-20">
             <img
               src="images/home.png"
-              alt=""
+              alt="profile"
               width={300}
               height={300}
-              className="rounded-full shadow-around"
+              className="rounded-full"
             />
           </div>
-          <div>
-            <h1 className="text-4xl font-bold">Welcome to My Portfolio</h1>
-            <p className="mt-4 text-lg">
-              Hi! I’m Hendrik, a passionate developer. Explore my projects,
-              learn more about me, and feel free to reach out!
-            </p>
-          </div>
+          <span className="mx-20 align-middle my-auto">
+            <p className="mb-2 text-xl font-indie font-semibold tracking-widest">Hi! My name is</p>
+            <h1 className="text-6xl font-extrabold font-sans">
+              Hendrik Tarigan
+            </h1>
+            <p className="mt-4 text-xl font-indie font-semibold tracking-widest">Fullstack Web Developer</p>
+          </span>
         </div>
       </div>
     </section>
