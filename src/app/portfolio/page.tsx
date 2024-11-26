@@ -1,8 +1,11 @@
+// PortfolioPage.js (Server Component)
+import PortfolioClient from "@/app/portfolio/[client]"; // Mengimpor komponen client-side
+
 export default function PortfolioPage() {
   return (
-    <section>
-      <h1 className="text-4xl font-bold">Welcome to My Portfolio</h1>
-      <p className="mt-4 text-lg">Portfolio</p>
-    </section>
+    <div>
+      {/* Komponen ini tidak menggunakan useEffect, hanya merender client-side */}
+      <PortfolioClient />
+    </div>
   );
 }
