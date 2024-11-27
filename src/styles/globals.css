@@ -5,21 +5,82 @@
 :root {
   --background: #303030; /* Background */
   --foreground: #999999; /* Text */
+  --foregroundHover: #d5d5d5; /* Text */
   --navbar: #343434; /* Navbar */
 }
 
 @font-face {
-  font-family: 'Indie Flower';
-  src: url('../app/fonts/IndieFlower-Regular.ttf') format('truetype');
+  font-family: "Indie Flower";
+  src: url("../app/fonts/IndieFlower-Regular.ttf") format("truetype");
   font-weight: normal;
 }
 
 .font-indie {
-  font-family: 'Indie Flower', cursive;
+  font-family: "Indie Flower", cursive;
 }
 
 body {
-  color: var(--foreground); 
+  color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif; 
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* scoll */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+}
+
+/* Scroll Down Icon */
+.scroll-icon {
+  position: fixed;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif;
+  font-size: 13px;
+  line-height: 17px;
+  color: #999;
+  background-color: transparent;
+}
+
+.mouse-icon {
+  width: 30px;
+  height: 55px;
+  margin: 5px auto 0;
+  border: 2px solid #999;
+  border-radius: 80px;
+}
+
+.mouse-icon_wheel {
+  width: 8px;
+  height: 12px;
+  margin: 8px auto 0;
+  background-color: #999;
+  border-radius: 8px;
+  animation: scroller 5s ease-out infinite;
+}
+
+@keyframes scroller {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
 }

@@ -1,8 +1,8 @@
 export default function HomePage() {
   return (
-    <section className="relative bg-background flex flex-col items-center justify-evenly md:h-screen md:flex-row md:overflow-hidden">
-      <div className="mt-10 mx-auto flex flex-col items-center">
-        <div className="flex justify-between">
+    <section className="relative bg-background flex flex-col items-center justify-center min-h-screen md:flex-row md:overflow-hidden">
+      <div className="mx-auto flex flex-col items-center">
+        <div className="flex justify-center">
           <div className="mx-20">
             <img
               src="images/home.png"
@@ -13,11 +13,15 @@ export default function HomePage() {
             />
           </div>
           <span className="mx-20 align-middle my-auto">
-            <p className="mb-2 text-xl font-indie font-semibold tracking-widest">Hi! My name is</p>
+            <p className="mb-2 text-xl font-indie font-semibold tracking-widest">
+              Hi! My name is
+            </p>
             <h1 className="text-6xl font-extrabold font-sans">
               Hendrik Tarigan
             </h1>
-            <p className="mt-4 text-xl font-indie font-semibold tracking-widest">Fullstack Web Developer</p>
+            <p className="mt-4 text-xl font-indie font-semibold tracking-widest">
+              Fullstack Web Developer
+            </p>
           </span>
         </div>
       </div>

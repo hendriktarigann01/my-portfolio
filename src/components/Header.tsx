@@ -25,17 +25,17 @@ const Header = () => {
             <div className="flex-shrink-0">
               <h1 className="text-white font-bold text-xl">My Website</h1>
             </div>
-            <nav className="hidden md:flex space-x-8">
+            <nav className="hidden md:flex space-x-8 font-sans">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.path}
                   className={`text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group ${
-                    pathname === link.path ? "text-purple-500" : ""
+                    pathname === link.path ? "text-slate-500" : ""
                   }`}
                 >
                   {link.name}
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200" />
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200" />
                 </Link>
               ))}
             </nav>
@@ -67,7 +67,7 @@ const Header = () => {
                 key={link.name}
                 href={link.path}
                 className={`block text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
-                  pathname === link.path ? "text-purple-500" : ""
+                  pathname === link.path ? "text-slate--500" : ""
                 }`}
               >
                 {link.name}

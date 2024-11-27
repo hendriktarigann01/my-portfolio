@@ -11,8 +11,12 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        foregroundHover: "var(--foregroundHover)",
         navbar: "var(--navbar)",
       },
+      lineHeight: {
+        custom: "2.5",
+      }
     },
   },
   plugins: [],

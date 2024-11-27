@@ -14,11 +14,11 @@ export default function AboutPage() {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="h-10 w-10 text-primary-light group-hover:text-primary-dark transition-all duration-700 ease-in-out"
+                className="h-10 w-10 font-indie tracking-wider font-semibold group-hover:text-primary-dark transition-all duration-700 ease-in-out"
               >
                 <path d={skill.svg} />
               </svg>
-              <span className="text-sm text-primary-light opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out transform group-hover:translate-y-2 w-full text-center">
+              <span className="text-sm font-indie tracking-wider font-semibold opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out transform group-hover:translate-y-2 w-full text-center">
                 {skill.name}
               </span>
             </div>
@@ -26,7 +26,7 @@ export default function AboutPage() {
         </div>
       </div>
       <div className="relative order-1 my-10 w-3/4 text-justify md:order-2 md:my-0 md:w-1/4">
-        <p className="text-md font-light text-primary-light">
+        <p className="text-md font-bold font-indie tracking-widest leading-custom">
           "Hello! My name is Muhamad Hendrik Tarigan, you can call me Hendrik,
           Tarigan or whatever you want. I'm a Front-end Developer located in
           West Java, Indonesia. As a Front-end Developer I used to code websites
