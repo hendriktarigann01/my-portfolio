@@ -29,7 +29,9 @@
     ".next/types/**/*.ts",
     "src/components/Header.tsx",
     "src/components/Layouts.tsx",
-    "src/app/pages/index.tsx"
+    "src/app/pages/index.tsx",
+    "pages/**/*.ts",
+    "pages/**/*.tsx"
   ],
   "exclude": ["node_modules"]
 }
