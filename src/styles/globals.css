@@ -7,6 +7,7 @@
   --foreground: #999999; /* Text */
   --foregroundHover: #d5d5d5; /* Text */
   --navbar: #343434; /* Navbar */
+  --card-size: 300px;
 }
 
 @font-face {
@@ -82,5 +83,95 @@ body {
   100% {
     opacity: 0;
     transform: translateY(25px);
+  }
+}
+
+/* homepage */
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+.card-container {
+  position: relative;
+  width: var(--card-size);
+  height: var(--card-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: var(--background);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 4px;
+  z-index: 1;
+  background: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation: spin 4s linear infinite;
+}
+
+.card-container img {
+  width: calc(var(--card-size) - 40px);
+  height: calc(var(--card-size) - 40px);
+  border-radius: 50%;
+  z-index: 10;
+  opacity: 0; 
+  visibility: hidden; 
+  transition: opacity 0.3s ease-in-out, visibility 0s 0.3s; 
+}
+
+.card-container:hover img {
+  opacity: 1;
+  visibility: visible; 
+  transition: opacity 0.3s ease-in-out, visibility 0s 0s;
+  z-index: 2;
+}
+
+.card-container::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%; 
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-size) / 6));
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+  );
+  opacity: 0; 
+  transition: opacity 0.5s;
+}
+
+.card-container:hover::after {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
   }
 }
