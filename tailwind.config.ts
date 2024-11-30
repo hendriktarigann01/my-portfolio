@@ -16,7 +16,7 @@ export default {
       },
       lineHeight: {
         custom: "2.5",
-      }
+      },
     },
   },
   plugins: [],
