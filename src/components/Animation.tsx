@@ -19,7 +19,7 @@ export default function Animation({ onFinish }: { onFinish: () => void }) {
   }, [activeIndex, onFinish]);
 
   return (
-    <div className="h-screen w-screen bg-gray-800 text-white flex justify-center items-center">
+    <div className="h-screen w-screen bg-background text-foreground flex justify-center items-center">
       <div className="word">
         {["H", "E", "N", "D", "R", "I", "K"].map((char, index) => (
           <span
