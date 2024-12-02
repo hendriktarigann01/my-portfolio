@@ -28,7 +28,7 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="relative flex w-full flex-col items-center justify-evenly py-40 md:h-screen md:flex-row md:overflow-hidden">
+    <section className="relative flex w-full flex-col items-center justify-evenly py-20 md:py-40 md:h-screen md:flex-row md:overflow-hidden">
       <div className="relative my-10 w-9/12 text-right md:my-0 md:w-2/5">
         {Contacts.map((contact) => (
           <a
@@ -58,7 +58,7 @@ export default function ContactPage() {
 
       {/* Bagian Formulir */}
       <div className="relative my-10 w-9/12 md:my-0 md:w-1/3">
-        <div className="relative w-full md:w-4/5">
+        <div className="relative w-full mb-16 md:w-4/5 md:mb-0">
           <form
             onSubmit={handleSubmit}
             className="w-full rounded-md placeholder:text-foreground font-medium"
