@@ -7,6 +7,7 @@ export default function ContactPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState(""); 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,9 +22,9 @@ export default function ContactPage() {
 
     const data = await response.json();
     if (data.success) {
-      alert("Pesan berhasil dikirim!");
+      setStatus("Pesan berhasil dikirim!"); 
     } else {
-      alert("Terjadi kesalahan: " + data.error);
+      setStatus("Terjadi kesalahan: " + data.error); 
     }
   };
 
@@ -56,7 +57,6 @@ export default function ContactPage() {
         ))}
       </div>
 
-      {/* Bagian Formulir */}
       <div className="relative my-10 w-9/12 md:my-0 md:w-1/3">
         <div className="relative w-full mb-16 md:w-4/5 md:mb-0">
           <form
@@ -98,7 +98,7 @@ export default function ContactPage() {
             >
               Send Message
             </button>
-            {status && <p className="mt-2 text-sm">{status}</p>}
+            {status && <p className="mt-2 text-sm">{status}</p>}{" "}
           </form>
         </div>
       </div>
