@@ -30,11 +30,11 @@ export default function AboutPage() {
       {/* About Text Section */}
       <div className="relative order-1 my-10 w-11/12 text-justify sm:w-4/5 md:order-2 md:my-0 md:w-1/4">
         <p className="text-sm sm:text-md font-bold font-indie tracking-widest leading-custom">
-          "Hello! My name is Muhamad Hendrik Tarigan, you can call me Hendrik,
-          Tarigan or whatever you want. I&apos;m a Front-end Developer located
-          in West Java, Indonesia. As a Front-end Developer I used to code
-          websites from scratch. I love to create simple yet beautiful websites
-          with great user experience."
+          &ldquo;Hello! My name is Muhamad Hendrik Tarigan, you can call me
+          Hendrik, Tarigan or whatever you want. I&apos;m a Front-end Developer
+          located in West Java, Indonesia. As a Front-end Developer I used to
+          code websites from scratch. I love to create simple yet beautiful
+          websites with great user experience.&rdquo;
         </p>
       </div>
     </section>
