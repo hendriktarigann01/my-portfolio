@@ -30,7 +30,7 @@ export default function ContactPage() {
 
   return (
     <section className="relative flex w-full flex-col items-center justify-evenly py-20 md:py-40 md:h-screen md:flex-row md:overflow-hidden">
-      <div className="relative my-5 pt-40 w-9/12 text-right md:pt-0 md:my-0 md:w-2/5">
+      <div className="relative my-5 pt-10 w-9/12 text-right md:pt-0 md:my-0 md:w-2/5">
         {Contacts.map((contact) => (
           <a
             key={contact.id}
@@ -40,7 +40,7 @@ export default function ContactPage() {
             className="my-4 flex justify-end fill-foreground transition-all duration-500 hover:fill-foregroundHover hover:text-foregroundHover"
           >
             <div className="mr-8">
-              <h4 className="text-xl font-indie">{contact.name}</h4>
+              <h4 className="text-xl font-indie font-semibold tracking-wider">{contact.name}</h4>
               <h3 className="text-sm font-extralight">{contact.value}</h3>
             </div>
             <div className="h-12 w-12">
@@ -67,7 +67,7 @@ export default function ContactPage() {
               type="text"
               name="name"
               id="name"
-              className="w-full font-indie rounded-md border border-foregroundHover bg-background px-4 py-1 transition duration-500 ease-in-out text-foregroundHover placeholder:text-foreground font-medium mb-3"
+              className="w-full rounded-md border border-foregroundHover bg-background px-4 py-1 transition duration-500 ease-in-out text-foregroundHover placeholder:text-foreground font-medium mb-3"
               placeholder="Name"
               value={name}
               onChange={(e) => setName(e.target.value)}

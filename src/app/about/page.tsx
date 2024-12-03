@@ -2,7 +2,7 @@ import { Skills } from "@/data/Skills";
 
 export default function AboutPage() {
   return (
-    <section className="relative bg-background flex w-full flex-col items-center justify-evenly py-10 md:h-screen md:flex-row md:overflow-hidden">
+    <section className="relative bg-background flex w-full flex-col items-center justify-evenly py-20 md:h-screen md:flex-row md:overflow-hidden">
       <div className="relative order-2 mb-24 flex w-3/4 flex-col items-center justify-end md:mb-0 md:order-1 md:w-1/3">
         <div className="grid w-full grid-cols-2 gap-4 sm:grid-cols-3 md:w-4/5 md:grid-cols-4">
           {Skills.map((skill) => (
@@ -25,7 +25,7 @@ export default function AboutPage() {
           ))}
         </div>
       </div>
-      <div className="relative order-1 my-10 pt-48 w-11/12 text-justify sm:w-4/5 md:order-2 md:my-0 md:pt-0 md:w-1/4">
+      <div className="relative order-1 my-10 w-11/12 text-justify sm:w-4/5 md:order-2 md:my-0 md:w-1/4">
         <p className="text-sm sm:text-md font-bold font-indie tracking-widest leading-custom">
           &ldquo;Hello! My name is Muhamad Hendrik Tarigan, you can call me
           Hendrik, Tarigan or whatever you want. I&apos;m a Front-end Developer

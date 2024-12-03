@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-
 const Footer = () => {
   return (
     <div className="flex justify-center">

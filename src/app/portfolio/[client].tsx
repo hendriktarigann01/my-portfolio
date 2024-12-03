@@ -35,19 +35,11 @@ export default function PortfolioPage() {
   return (
     <section
       ref={scrollContainerRef}
-      className="relative h-screen w-full flex items-center overflow-x-auto overflow-y-hidden whitespace-nowrap"
+      className="relative h-screen w-full flex items-center overflow-hidden whitespace-nowrap"
       style={{
         scrollBehavior: "auto",
       }}
     >
-      <div className="flex items-center mr-20">
-        <div className="scroll-icon">
-          <span>Scroll</span>
-          <div className="mouse-icon">
-            <div className="mouse-icon_wheel"></div>
-          </div>
-        </div>
-      </div>
       {Projects.map((project) => (
         <div
           key={project.id}

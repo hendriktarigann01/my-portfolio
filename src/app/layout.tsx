@@ -13,11 +13,11 @@ export default function RootLayout({
     <html lang="en">
       <body className="h-screen flex flex-col overflow-visible md:overflow-hidden">
         <ClientWrapper>
-        <Header />
-        <main className="flex-grow container mx-auto p-4 min-h-screen">
-          {children}
-        </main>
-        <Footer />
+          <Header />
+          <main className="flex-grow container m-auto h-screen">
+            {children}
+          </main>
+          <Footer />
         </ClientWrapper>
       </body>
     </html>
