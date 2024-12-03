@@ -1,10 +1,18 @@
+import Image from "next/image";
+
 export default function HomePage() {
   return (
     <section className="relative bg-background flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
       <div className="mx-auto flex flex-col items-center md:flex-row sm:mb-0">
         <div className="flex-shrink-0 my-6 md:my-0">
           <div className="card-container">
-            <img src="images/home.png" alt="profile" className="rounded-full" />
+            <Image
+              src="/images/home.png"
+              alt="profile"
+              width={260}
+              height={260}
+              className="rounded-full"
+            />
           </div>
         </div>
         <div className="text-center mt-6 md:mt-0 md:ml-10 lg:ml-20 md:text-left">

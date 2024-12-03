@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { Projects } from "@/data/Projects";
 
@@ -56,29 +57,29 @@ export default function PortfolioPage() {
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              className="relative w-full h-full transition-transform duration-500 hover:scale-120"
+            <Image
+              className="relative transition-transform duration-500 hover:scale-120"
               src={project.img}
               alt={project.name}
+              width={300}
+              height={300}
             />
           </a>
-          <div className="py-2 text-lg font-bold tracking-wide font-indie text-wrap text-center text-primary-dark">
+          <div className="py-2 text-lg font-bold tracking-wide font-indie text-wrap text-center">
             {project.name}
           </div>
-          <div className="pt-0 pb-4 text-md font-light text-primary-dark">
-            {project.status}
-          </div>
+          <div className="pt-0 pb-4 text-md font-light">{project.status}</div>
           <div className="flex w-full justify-between px-3 pt-1 pb-4">
             {project.demo && (
               <a href={project.demo} target="_blank" rel="noreferrer">
-                <span className="rounded-md border-2 border-primary-dark px-3 py-2 font-semibold text-primary-dark transition-all duration-500 hover:bg-primary-dark hover:text-primary-light">
+                <span className="rounded-md border-2 border-gray-600 px-3 py-2 font-semibold transition-all duration-500">
                   View Demo
                 </span>
               </a>
             )}
             <a href={project.sourceCode} target="_blank" rel="noreferrer">
-              <span className="rounded-md border-2 border-primary-dark px-1 py-2 font-semibold text-primary-dark transition-all duration-500 hover:bg-primary-dark hover:text-primary-light">
-                Source Code
+              <span className="rounded-md border-2 border-gray-600 px-3 py-2 font-semibold transition-all duration-500">
+                See More
               </span>
             </a>
           </div>
