@@ -30,7 +30,7 @@ export default function ContactPage() {
 
   return (
     <section className="relative flex w-full flex-col items-center justify-evenly py-20 md:py-40 md:h-screen md:flex-row md:overflow-hidden">
-      <div className="relative my-10 w-9/12 text-right md:my-0 md:w-2/5">
+      <div className="relative my-5 pt-40 w-9/12 text-right md:pt-0 md:my-0 md:w-2/5">
         {Contacts.map((contact) => (
           <a
             key={contact.id}

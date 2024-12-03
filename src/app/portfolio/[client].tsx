@@ -13,17 +13,20 @@ export default function PortfolioPage() {
     const handleScroll = (event: WheelEvent) => {
       if (scrollContainer) {
         event.preventDefault();
-        // Scale the scroll speed
-        scrollContainer.scrollLeft += event.deltaY * 3;
+        const isMobile = window.innerWidth <= 768;
+
+        if (isMobile) {
+          scrollContainer.scrollLeft += event.deltaX * 3;
+        } else {
+          scrollContainer.scrollLeft += event.deltaY * 3;
+        }
       }
     };
 
-    // Add event listener
     scrollContainer?.addEventListener("wheel", handleScroll, {
       passive: false,
     });
 
-    // Cleanup when component unmounts
     return () => {
       scrollContainer?.removeEventListener("wheel", handleScroll);
     };
@@ -37,7 +40,6 @@ export default function PortfolioPage() {
         scrollBehavior: "auto",
       }}
     >
-      {/* Scroll Icon */}
       <div className="flex items-center mr-20">
         <div className="scroll-icon">
           <span>Scroll</span>
