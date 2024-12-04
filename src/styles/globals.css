@@ -96,14 +96,14 @@ body {
   height: calc(var(--card-size) - 40px);
   border-radius: 50%;
   z-index: 10;
-  opacity: 0; 
-  visibility: hidden; 
-  transition: opacity 0.3s ease-in-out, visibility 0s 0.3s; 
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
 }
 
 .card-container:hover img {
   opacity: 1;
-  visibility: visible; 
+  visibility: visible;
   transition: opacity 0.3s ease-in-out, visibility 0s 0s;
   z-index: 2;
 }
@@ -117,7 +117,7 @@ body {
   z-index: 1;
   height: 100%;
   width: 100%;
-  border-radius: 50%; 
+  border-radius: 50%;
   margin: 0 auto;
   transform: scale(0.8);
   filter: blur(calc(var(--card-size) / 6));
@@ -127,7 +127,7 @@ body {
     #3c67e3 43%,
     #4e00c2
   );
-  opacity: 0; 
+  opacity: 0;
   transition: opacity 0.5s;
 }
 
@@ -143,5 +143,28 @@ body {
   }
   100% {
     --rotate: 360deg;
+  }
+}
+
+/* SweetAlert */
+.swal2-popup {
+  background: var(--background);
+  max-width: 400px;
+}
+
+.swal2-title,
+#swal2-html-container {
+  color: var(--foreground);
+}
+
+.swal2-styled {
+  background-color: var(--navbar);
+  color: var(--foreground);
+}
+
+@media (max-width: 768px) {
+  .swal2-popup {
+    width: 80%;
+    font-size: 0.9rem;
   }
 }
