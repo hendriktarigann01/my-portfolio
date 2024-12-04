@@ -8,7 +8,7 @@ import { Projects } from "@/data/Projects";
 export default function PortfolioPage() {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
-  // Pengecekan scroll horizontal
+  // desktop
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
 
@@ -47,7 +47,7 @@ export default function PortfolioPage() {
   return (
     <section
       ref={scrollContainerRef}
-      className="relative h-screen w-full flex items-center overflow-hidden whitespace-nowrap"
+      className="relative h-screen w-full flex items-center whitespace-nowrap scrollbar-none"
       style={{
         scrollBehavior: "auto",
       }}
