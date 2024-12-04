@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
@@ -28,9 +29,7 @@ const Header = () => {
         <div className="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-white font-bold text-lg md:text-xl lg:text-2xl">
-              My Website
-            </h1>
+            <Image src="/images/logoHT.png" alt="Logo" width={50} height={50} />
           </div>
 
           {/* Navigation for Desktop */}
