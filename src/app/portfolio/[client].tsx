@@ -1,25 +1,21 @@
 "use client";
 
 import Image from "next/image";
+import Swal from "sweetalert2";
 import { useEffect, useRef } from "react";
 import { Projects } from "@/data/Projects";
 
 export default function PortfolioPage() {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
+  // Pengecekan scroll horizontal
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
 
     const handleScroll = (event: WheelEvent) => {
       if (scrollContainer) {
         event.preventDefault();
-        const isMobile = window.innerWidth <= 768;
-
-        if (isMobile) {
-          scrollContainer.scrollLeft += event.deltaX * 3;
-        } else {
-          scrollContainer.scrollLeft += event.deltaY * 3;
-        }
+        scrollContainer.scrollLeft += event.deltaY * 3;
       }
     };
 
@@ -31,6 +27,22 @@ export default function PortfolioPage() {
       scrollContainer?.removeEventListener("wheel", handleScroll);
     };
   }, []);
+
+  const handleClick = (data: string | null, type: string) => {
+    if (!data) {
+      Swal.fire({
+        icon: "warning",
+        title: `Mohon Maaf`,
+        text: `${type} Tidak Tersedia`,
+        iconColor: "#999999",
+        customClass: {
+          popup: "swal2-popup",
+        },
+      });
+      return false;
+    }
+    return true;
+  };
 
   return (
     <section
@@ -59,21 +71,34 @@ export default function PortfolioPage() {
               height={300}
             />
           </a>
-          <div className="py-2 text-lg font-bold tracking-wide font-indie text-wrap text-center">
+          <div className="py-2 h-20 text-lg font-bold tracking-wider font-indie text-wrap text-center">
             {project.name}
           </div>
           <div className="pt-0 pb-4 text-md font-light">{project.status}</div>
-          <div className="flex w-full justify-between px-3 pt-1 pb-4">
-            {project.demo && (
-              <a href={project.demo} target="_blank" rel="noreferrer">
-                <span className="rounded-md border-2 border-gray-600 px-3 py-2 font-semibold transition-all duration-500">
-                  View Demo
-                </span>
-              </a>
-            )}
-            <a href={project.sourceCode} target="_blank" rel="noreferrer">
+          <div className="flex w-full justify-between px-1 pt-1 pb-4">
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noreferrer"
+              onClick={(e) => {
+                if (!handleClick(project.demo, "Demo")) e.preventDefault();
+              }}
+            >
               <span className="rounded-md border-2 border-gray-600 px-3 py-2 font-semibold transition-all duration-500">
-                See More
+                View Demo
+              </span>
+            </a>
+            <a
+              href={project.sourceCode}
+              target="_blank"
+              rel="noreferrer"
+              onClick={(e) => {
+                if (!handleClick(project.sourceCode, "Source Code"))
+                  e.preventDefault();
+              }}
+            >
+              <span className="rounded-md border-2 border-gray-600 px-3 py-2 font-semibold transition-all duration-500">
+                Source Code
               </span>
             </a>
           </div>
