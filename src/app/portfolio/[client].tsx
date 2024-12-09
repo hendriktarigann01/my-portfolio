@@ -47,7 +47,7 @@ export default function PortfolioPage() {
   return (
     <section
       ref={scrollContainerRef}
-      className="relative h-screen w-full flex items-center whitespace-nowrap scrollbar-none"
+      className="relative h-screen w-full flex items-center whitespace-nowrap overflow-x-auto overflow-y-hidden scrollbar-none"
       style={{
         scrollBehavior: "auto",
       }}
