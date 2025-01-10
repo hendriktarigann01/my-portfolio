@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Animation from "@/components/Animation";
 import "../styles/splashScreen.css";
 
@@ -9,9 +10,15 @@ export default function ClientWrapper({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname(); 
   const [showAnimation, setShowAnimation] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
+
+  // pengecualian untuk halaman detail
+  if (pathname?.startsWith("/detail/")) {
+    return <>{children}</>;
+  }
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -19,8 +26,8 @@ export default function ClientWrapper({
       setTimeout(() => {
         setShowAnimation(false);
         setFadeIn(true);
-      }, 500); // Match this duration with the fade-out duration
-    }, 7500); // Duration before starting fade-out
+      }, 500); 
+    }, 7500); 
 
     return () => clearTimeout(timer);
   }, []);
