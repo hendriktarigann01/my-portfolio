@@ -10,7 +10,7 @@ export default function ClientWrapper({
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname(); 
+  const pathname = usePathname();
   const [showAnimation, setShowAnimation] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
@@ -20,17 +20,18 @@ export default function ClientWrapper({
     return <>{children}</>;
   }
 
+  // Efek ini akan selalu dipanggil tanpa bergantung pada pathname
   useEffect(() => {
     const timer = setTimeout(() => {
       setFadeOut(true);
       setTimeout(() => {
         setShowAnimation(false);
         setFadeIn(true);
-      }, 500); 
-    }, 7500); 
+      }, 500);
+    }, 7500);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, []); // Array dependensi kosong memastikan efek ini hanya dipanggil sekali saat komponen pertama kali dimuat
 
   if (showAnimation) {
     return <Animation onFinish={() => setShowAnimation(false)} />;
