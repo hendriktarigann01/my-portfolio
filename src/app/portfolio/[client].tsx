@@ -3,12 +3,12 @@
 import Image from "next/image";
 import Swal from "sweetalert2";
 import { useEffect, useRef } from "react";
+import Link from "next/link"; 
 import { Projects } from "@/data/Projects";
 
 export default function PortfolioPage() {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
-  // desktop
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
 
@@ -76,6 +76,11 @@ export default function PortfolioPage() {
           </div>
           <div className="pt-0 pb-4 text-md font-light">{project.status}</div>
           <div className="flex w-full justify-between px-1 pt-1 pb-4">
+            <Link href={`/portfolio/${project.id}`}>
+              <span className="rounded-md border-2 border-gray-600 px-3 py-2 font-semibold transition-all duration-500">
+                See Detail
+              </span>
+            </Link>
             <a
               href={project.demo}
               target="_blank"

@@ -28,10 +28,14 @@ export default function AboutPage() {
       <div className="relative order-1 my-10 w-11/12 text-justify sm:w-4/5 md:order-2 md:my-0 md:w-1/4">
         <p className="text-sm sm:text-md font-bold font-indie tracking-widest leading-custom">
           &ldquo;Hello! My name is Muhamad Hendrik Tarigan, you can call me
-          Hendrik, Tarigan or whatever you want. I&apos;m a Front-end Developer
-          located in West Java, Indonesia. As a Front-end Developer I used to
-          code websites from scratch. I love to create simple yet beautiful
-          websites with great user experience.&rdquo;
+          Hendrik, Tarigan or whatever you want. I&apos;m a Fullstack Web
+          Developer located in Jakarta, Indonesia. I have experience in both
+          front-end and back-end development, allowing me to build complete web
+          applications from the ground up. I enjoy creating seamless and
+          efficient user experiences while also ensuring robust server-side
+          functionality. My passion lies in crafting well-structured, responsive
+          websites that not only look great but also perform optimally across
+          various devices.&rdquo;
         </p>
       </div>
     </section>
