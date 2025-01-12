@@ -74,39 +74,14 @@ export default function PortfolioPage() {
           <div className="py-2 h-20 text-lg font-bold tracking-wider font-indie text-wrap text-center">
             {project.name}
           </div>
-          <div className="pt-0 pb-4 text-md font-light">{project.status}</div>
-          <div className="flex w-full justify-between px-1 pt-1 pb-4">
+          <div className="w-full px-3 py-2 max-w-[120px] [background:linear-gradient(45deg,#303030,#303030)_padding-box,conic-gradient(from_var(--border-angle),theme(colors.slate.600/.48)_80%,_theme(colors.indigo.500)_86%,_theme(colors.indigo.300)_90%,_theme(colors.indigo.500)_94%,_theme(colors.slate.600/.48))_border-box] rounded-md border border-transparent animate-border">
             <Link href={`/portfolio/${project.id}`}>
-              <span className="rounded-md border-2 border-gray-600 px-3 py-2 font-semibold transition-all duration-500">
+              <span className="flex items-center justify-center font-semibold text-center w-full h-full">
                 See Detail
               </span>
             </Link>
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noreferrer"
-              onClick={(e) => {
-                if (!handleClick(project.demo, "Demo")) e.preventDefault();
-              }}
-            >
-              <span className="rounded-md border-2 border-gray-600 px-3 py-2 font-semibold transition-all duration-500">
-                View Demo
-              </span>
-            </a>
-            <a
-              href={project.sourceCode}
-              target="_blank"
-              rel="noreferrer"
-              onClick={(e) => {
-                if (!handleClick(project.sourceCode, "Source Code"))
-                  e.preventDefault();
-              }}
-            >
-              <span className="rounded-md border-2 border-gray-600 px-3 py-2 font-semibold transition-all duration-500">
-                Source Code
-              </span>
-            </a>
           </div>
+          <div className="py-2 text-md font-light">{project.status}</div>
         </div>
       ))}
     </section>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Projects } from "@/data/Projects";
+import Link from "next/link";
 
 export default function ProjectDetail({ params }: { params: { id: string } }) {
   const { id } = params;
@@ -29,24 +30,24 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
         </div>
         <div className="flex space-x-4">
           {project.demo && (
-            <a
+            <Link
               href={project.demo}
               target="_blank"
               rel="noreferrer"
               className="px-4 py-2 bg-blue-500 text-white rounded-md"
             >
               View Demo
-            </a>
+            </Link>
           )}
           {project.sourceCode && (
-            <a
+            <Link
               href={project.sourceCode}
               target="_blank"
               rel="noreferrer"
               className="px-4 py-2 bg-green-500 text-white rounded-md"
             >
               Source Code
-            </a>
+            </Link>
           )}
         </div>
         <a

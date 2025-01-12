@@ -17,6 +17,14 @@ export default {
       lineHeight: {
         custom: "2.5",
       },
+      animation: {
+        border: "border 4s linear infinite",
+      },
+      keyframes: {
+        border: {
+          to: { "--border-angle": "360deg" },
+        },
+      },
     },
   },
   plugins: [

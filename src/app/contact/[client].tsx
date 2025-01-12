@@ -7,7 +7,7 @@ export default function ContactPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState(""); 
+  const [status, setStatus] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,9 +22,9 @@ export default function ContactPage() {
 
     const data = await response.json();
     if (data.success) {
-      setStatus("Pesan berhasil dikirim!"); 
+      setStatus("Pesan berhasil dikirim!");
     } else {
-      setStatus("Terjadi kesalahan: " + data.error); 
+      setStatus("Terjadi kesalahan: " + data.error);
     }
   };
 
@@ -40,7 +40,9 @@ export default function ContactPage() {
             className="my-4 flex justify-end fill-foreground transition-all duration-500 hover:fill-foregroundHover hover:text-foregroundHover"
           >
             <div className="mr-8">
-              <h4 className="text-xl font-indie font-semibold tracking-wider">{contact.name}</h4>
+              <h4 className="text-xl font-indie font-semibold tracking-wider">
+                {contact.name}
+              </h4>
               <h3 className="text-sm font-extralight">{contact.value}</h3>
             </div>
             <div className="h-12 w-12">
@@ -94,7 +96,9 @@ export default function ContactPage() {
             />
             <button
               type="submit"
-              className="w-full rounded-md border border-foregroundHover bg-background px-4 py-1 transition duration-500 ease-in-out placeholder-text-foregroundHover cursor-pointer font-semibold"
+              className="w-full rounded-md border border-transparent px-4 py-1 font-semibold cursor-pointer 
+                        [background:linear-gradient(45deg,#303030,#303030)_padding-box,conic-gradient(from_var(--border-angle),theme(colors.slate.600/.48)_80%,theme(colors.indigo.500)_86%,theme(colors.indigo.300)_90%,theme(colors.indigo.500)_94%,theme(colors.slate.600/.48))_border-box] 
+                        animate-border transition duration-500 ease-in-out"
             >
               Send Message
             </button>

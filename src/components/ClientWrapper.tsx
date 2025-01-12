@@ -15,13 +15,12 @@ export default function ClientWrapper({
   const [fadeOut, setFadeOut] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
 
-  // pengecualian untuk halaman detail
-  if (pathname?.startsWith("/detail/")) {
-    return <>{children}</>;
-  }
-
-  // Efek ini akan selalu dipanggil tanpa bergantung pada pathname
+  // Always call useEffect
   useEffect(() => {
+    if (pathname?.startsWith("/detail/")) {
+      return;
+    }
+
     const timer = setTimeout(() => {
       setFadeOut(true);
       setTimeout(() => {
@@ -31,7 +30,12 @@ export default function ClientWrapper({
     }, 7500);
 
     return () => clearTimeout(timer);
-  }, []); // Array dependensi kosong memastikan efek ini hanya dipanggil sekali saat komponen pertama kali dimuat
+  }, [pathname]); // Ensure pathname is included as a dependency
+
+  // Conditional rendering
+  if (pathname?.startsWith("/detail/")) {
+    return <>{children}</>;
+  }
 
   if (showAnimation) {
     return <Animation onFinish={() => setShowAnimation(false)} />;

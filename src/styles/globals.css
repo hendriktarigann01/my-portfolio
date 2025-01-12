@@ -168,3 +168,10 @@ body {
     font-size: 0.9rem;
   }
 }
+
+/* border portfolio & contact */
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: "<angle>";
+}
