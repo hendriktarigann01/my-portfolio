@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Swal from "sweetalert2";
 import { useEffect, useRef } from "react";
 import Link from "next/link"; 
 import { Projects } from "@/data/Projects";
@@ -27,22 +26,6 @@ export default function PortfolioPage() {
       scrollContainer?.removeEventListener("wheel", handleScroll);
     };
   }, []);
-
-  const handleClick = (data: string | null, type: string) => {
-    if (!data) {
-      Swal.fire({
-        icon: "warning",
-        title: `Mohon Maaf`,
-        text: `${type} Tidak Tersedia`,
-        iconColor: "#999999",
-        customClass: {
-          popup: "swal2-popup",
-        },
-      });
-      return false;
-    }
-    return true;
-  };
 
   return (
     <section

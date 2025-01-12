@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Swal from "sweetalert2";
 import { Projects } from "@/data/Projects";
 import Link from "next/link";
 
@@ -14,41 +15,49 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
     );
   }
 
+  const handleClick = (data: string | null, type: string) => {
+    if (!data) {
+      Swal.fire({
+        icon: "warning",
+        title: `Mohon Maaf`,
+        text: `${type} Tidak Tersedia`,
+        iconColor: "#999999",
+        customClass: {
+          popup: "swal2-popup",
+        },
+      });
+      return false;
+    }
+    return true;
+  };
+
   return (
-    <section className="relative flex w-full flex-col items-center justify-evenly py-20 md:py-40 md:h-screen md:flex-row md:overflow-hidden">
-      <div className="relative my-5 pt-10 w-9/12 text-right md:pt-0 md:my-0 md:w-2/5">
+    <section className="relative flex w-full items-center py-20 md:py-40 md:h-screen md:flex-row md:overflow-hidden">
+      <div className="justify-center my-5 pt-10 w-full text-center md:pt-0 md:my-0">
         <h1 className="text-2xl font-bold mb-4">{project.name}</h1>
         <p className="mb-4">{project.status}</p>
-        <div className="relative w-full h-64 mb-4">
+        <div className="relative flex items-center justify-center w-full h-64">
           <Image
-            className="relative transition-transform duration-500 hover:scale-120"
+            className="transition-transform duration-500 hover:scale-120"
             src={project.img}
             alt={project.name}
-            width={300}
-            height={300}
+            width={200} //300
+            height={200}
           />
         </div>
-        <div className="flex space-x-4">
-          {project.demo && (
-            <Link
-              href={project.demo}
-              target="_blank"
-              rel="noreferrer"
-              className="px-4 py-2 bg-blue-500 text-white rounded-md"
-            >
-              View Demo
+        <div className="flex justify-center w-full pt-1 pb-4">
+          <div className="flex space-x-4">
+            <Link href={project.demo} target="_blank" rel="noreferrer">
+              <span className="rounded-md border-2 border-gray-600 px-3 py-2 font-semibold transition-all duration-500">
+                View Demo
+              </span>
             </Link>
-          )}
-          {project.sourceCode && (
-            <Link
-              href={project.sourceCode}
-              target="_blank"
-              rel="noreferrer"
-              className="px-4 py-2 bg-green-500 text-white rounded-md"
-            >
-              Source Code
+            <Link href={project.sourceCode} target="_blank" rel="noreferrer">
+              <span className="rounded-md border-2 border-gray-600 px-3 py-2 font-semibold transition-all duration-500">
+                Source Code
+              </span>
             </Link>
-          )}
+          </div>
         </div>
         <a
           href="/portfolio"
