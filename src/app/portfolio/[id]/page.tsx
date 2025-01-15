@@ -59,6 +59,7 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
             </Link>
           </div>
         </div>
+        <p>{project.description}</p>
         <a
           href="/portfolio"
           className="px-4 py-2 mt-4 inline-block bg-gray-500 text-white rounded-md"
