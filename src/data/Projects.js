@@ -7,7 +7,21 @@ export const Projects = [
     demo: "http://teknoid.itb-ad.ac.id/",
     sourceCode: "",
     description:
-      "A web application for managing campus correspondence efficiently.",
+      "A comprehensive web application designed to facilitate the management of campus correspondence, addressing the needs of all stakeholders, including university leaders, staff, lecturers, and students.",
+    features: [
+      "1. Incoming and Outgoing Mail Recording",
+      "2. Automatic Letter Numbering",
+      "3. Mail Recap",
+      "4. Mail Disposition",
+      "5. Mail Monitoring",
+    ],
+    detailFeatures: [
+      "1. Maintain detailed records of all incoming and outgoing correspondence.",
+      "2. Automatically generate unique numbers for each correspondence to ensure consistency and organization.",
+      "3. Generate comprehensive summaries of correspondence records for easy reference and reporting.",
+      "4. Enable structured delegation and tracking of tasks related to correspondence.",
+      "5. Real-time tracking of correspondence status to ensure timely processing and follow-up",
+    ],
   },
   {
     id: 2,
@@ -18,6 +32,8 @@ export const Projects = [
     sourceCode: "",
     description:
       "An application for tracking and managing campus attendance records.",
+    features: "",
+    detailFeatures: "",
   },
   {
     id: 3,
@@ -27,6 +43,8 @@ export const Projects = [
     demo: "",
     sourceCode: "https://github.com/hendriktarigann01/VidSwift",
     description: "A tool to download videos swiftly from various platforms.",
+    features: "",
+    detailFeatures: "",
   },
   {
     id: 4,
@@ -37,6 +55,8 @@ export const Projects = [
     sourceCode: "https://github.com/Monkskyz/imsisfo.web",
     description:
       "A profile website showcasing the Imsisfo organization's details.",
+    features: "",
+    detailFeatures: "",
   },
   {
     id: 5,
@@ -46,5 +66,7 @@ export const Projects = [
     demo: "",
     sourceCode: "",
     description: "A desktop app for managing campus inventory efficiently.",
+    features: "",
+    detailFeatures: "",
   },
 ];
