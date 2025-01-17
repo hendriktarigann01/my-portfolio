@@ -16,11 +16,11 @@ export const Projects = [
       "5. Mail Monitoring",
     ],
     detailFeatures: [
-      "1. Maintain detailed records of all incoming and outgoing correspondence.",
-      "2. Automatically generate unique numbers for each correspondence to ensure consistency and organization.",
-      "3. Generate comprehensive summaries of correspondence records for easy reference and reporting.",
-      "4. Enable structured delegation and tracking of tasks related to correspondence.",
-      "5. Real-time tracking of correspondence status to ensure timely processing and follow-up",
+      "Maintain detailed records of all incoming and outgoing correspondence.",
+      "Automatically generate unique numbers for each correspondence to ensure consistency and organization.",
+      "Generate comprehensive summaries of correspondence records for easy reference and reporting.",
+      "Enable structured delegation and tracking of tasks related to correspondence.",
+      "Real-time tracking of correspondence status to ensure timely processing and follow-up",
     ],
   },
   {
