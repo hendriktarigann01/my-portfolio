@@ -8,7 +8,7 @@ export default async function ProjectDetail({
 }: {
   params: { id: string };
 }) {
-  const { id } = params; // `params` sudah diresolve secara otomatis pada fungsi async
+  const { id } = params; 
   const project = Projects.find((item) => item.id === parseInt(id));
 
   if (!project) {
@@ -51,16 +51,20 @@ export default async function ProjectDetail({
         </div>
         <div className="flex justify-center w-full my-6 pt-1 pb-4">
           <div className="flex space-x-4">
-            <Link href={project.demo} target="_blank" rel="noreferrer">
-              <span className="rounded-md border-2 border-gray-600 px-4 py-2 font-semibold transition-all duration-500 w-36 h-10 flex items-center justify-center">
-                View Demo
-              </span>
-            </Link>
-            <Link href={project.sourceCode} target="_blank" rel="noreferrer">
-              <span className="rounded-md border-2 border-gray-600 px-4 py-2 font-semibold transition-all duration-500 w-36 h-10 flex items-center justify-center">
-                Source Code
-              </span>
-            </Link>
+            <div className=" w-36 h-10 cursor-pointer px-2 py-2 max-w-[120px] [background:linear-gradient(45deg,#303030,#303030)_padding-box,conic-gradient(from_var(--border-angle),theme(colors.slate.600/.48)_80%,_theme(colors.indigo.500)_86%,_theme(colors.indigo.300)_90%,_theme(colors.indigo.500)_94%,_theme(colors.slate.600/.48))_border-box] rounded-md border border-transparent animate-border">
+              <Link href={project.demo} target="_blank" rel="noreferrer">
+                <span className="flex items-center justify-center font-semibold text-center">
+                  View Demo
+                </span>
+              </Link>
+            </div>
+            <div className=" w-36 h-10 cursor-pointer px-2 py-2 max-w-[120px] [background:linear-gradient(45deg,#303030,#303030)_padding-box,conic-gradient(from_var(--border-angle),theme(colors.slate.600/.48)_80%,_theme(colors.indigo.500)_86%,_theme(colors.indigo.300)_90%,_theme(colors.indigo.500)_94%,_theme(colors.slate.600/.48))_border-box] rounded-md border border-transparent animate-border">
+              <Link href={project.sourceCode} target="_blank" rel="noreferrer">
+                <span className="flex items-center justify-center font-semibold text-center">
+                  Source Code
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
         <div className="tes">
@@ -80,12 +84,14 @@ export default async function ProjectDetail({
               </div>
             )}
         </div>
-        <Link
-          href="/portfolio"
-          className="rounded-md border-2 border-gray-600 px-4 py-2 font-semibold transition-all duration-500 h-10 flex items-center justify-center"
-        >
-          Back to Portfolio
-        </Link>
+        <div className="w-40 h-10 cursor-pointer mb-6 py-2 max-w-[120px] [background:linear-gradient(45deg,#303030,#303030)_padding-box,conic-gradient(from_var(--border-angle),theme(colors.slate.600/.48)_80%,_theme(colors.indigo.500)_86%,_theme(colors.indigo.300)_90%,_theme(colors.indigo.500)_94%,_theme(colors.slate.600/.48))_border-box] rounded-md border border-transparent animate-border">
+          <Link
+            href="/portfolio"
+            className="flex items-center justify-center font-semibold text-center"
+          >
+            Back
+          </Link>
+        </div>
       </div>
     </section>
   );

@@ -57,7 +57,7 @@ export default function PortfolioPage() {
           <div className="py-2 h-20 text-lg font-bold tracking-wider font-indie text-wrap text-center">
             {project.name}
           </div>
-          <div className="w-full px-3 py-2 max-w-[120px] [background:linear-gradient(45deg,#303030,#303030)_padding-box,conic-gradient(from_var(--border-angle),theme(colors.slate.600/.48)_80%,_theme(colors.indigo.500)_86%,_theme(colors.indigo.300)_90%,_theme(colors.indigo.500)_94%,_theme(colors.slate.600/.48))_border-box] rounded-md border border-transparent animate-border">
+          <div className="w-full cursor-pointer px-3 py-2 max-w-[120px] [background:linear-gradient(45deg,#303030,#303030)_padding-box,conic-gradient(from_var(--border-angle),theme(colors.slate.600/.48)_80%,_theme(colors.indigo.500)_86%,_theme(colors.indigo.300)_90%,_theme(colors.indigo.500)_94%,_theme(colors.slate.600/.48))_border-box] rounded-md border border-transparent animate-border">
             <Link href={`/portfolio/${project.id}`}>
               <span className="flex items-center justify-center font-semibold text-center w-full h-full">
                 See Detail
