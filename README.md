@@ -12,10 +12,11 @@ Before running the development server, you need to install the necessary Node mo
 
 ```bash
 npm install
-# or
-yarn install
-# or
-pnpm install
-# or
-bun install
+```
+
+### Run the Development Server
+
+After installing the Node modules, you can run the development server with:
+```bash
+npm run dev
 ```
