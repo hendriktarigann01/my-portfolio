@@ -32,6 +32,6 @@
     "src/app/pages/index.tsx",
     "pages/**/*.ts",
     "pages/**/*.tsx"
-  ],
+, "src/middleware,ts"  ],
   "exclude": ["node_modules"]
 }
