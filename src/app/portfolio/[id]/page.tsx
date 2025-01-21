@@ -1,3 +1,6 @@
+"use client";
+
+import React from "react";
 import Image from "next/image";
 import { Projects } from "@/data/Projects";
 import Link from "next/link";
@@ -5,10 +8,13 @@ import Link from "next/link";
 export default function PortfolioClientDetail({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const project = Projects.find((item) => item.id === parseInt(params.id));
+  const { id } = React.use(params);
+  const projectId = Number(id);
+  const project = Projects.find((item) => item.id === projectId);
 
+  // Checking Available Project
   if (!project) {
     return (
       <div className="flex h-screen items-center justify-center">
