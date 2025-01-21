@@ -55,7 +55,7 @@ export default function PortfolioPage() {
       {Projects.map((project) => (
         <div
           key={project.id}
-          className="flex-shrink-0 mx-8 w-80 flex flex-col items-center justify-center rounded-md border-4 p-4 border-gray-600"
+          className="flex-shrink-0 mx-8 w-72 mb-3 flex flex-col items-center justify-center rounded-md border-4 p-4 border-gray-600"
         >
           <a
             className="relative h-45 w-full items-center overflow-hidden rounded-md bg-primary-dark"
