@@ -1,4 +1,3 @@
-// components/Animation.tsx
 import { useEffect, useState } from "react";
 import "../styles/splashScreen.css";
 
@@ -8,7 +7,7 @@ export default function Animation({ onFinish }: { onFinish: () => void }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => prev + 1);
-    }, 1000);
+    }, 500);
 
     if (activeIndex >= 7) {
       clearInterval(interval);

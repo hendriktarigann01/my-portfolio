@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Animation from "@/components/Animation";
-import "../styles/splashScreen.css";
 
 export default function ClientWrapper({
   children,
@@ -15,7 +14,6 @@ export default function ClientWrapper({
   const [fadeOut, setFadeOut] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
 
-  // Always call useEffect
   useEffect(() => {
     if (pathname?.startsWith("/detail/")) {
       return;
@@ -27,7 +25,7 @@ export default function ClientWrapper({
         setShowAnimation(false);
         setFadeIn(true);
       }, 500);
-    }, 7500);
+    }, 3500);
 
     return () => clearTimeout(timer);
   }, [pathname]); // Ensure pathname is included as a dependency

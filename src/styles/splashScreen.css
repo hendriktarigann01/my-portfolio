@@ -11,18 +11,18 @@
   font-size: clamp(50px, 12vw, 120px);
   user-select: none;
   line-height: 0.8;
-  opacity: 0;
+  opacity: 0.5;
   transition: opacity 0.3s ease-in;
 }
 
 .word span.active {
-  opacity: 1; /* Muncul saat animasi dimulai */
-  transition: opacity 0.3s ease-in; /* Efek muncul halus */
-  animation: fadeInUp 1.5s ease-out;
+  opacity: 1;
+  transition: opacity 0.3s ease-in; 
+  animation: fadeInUp 1s ease-out;
 }
 
 .word span:nth-child(1).active {
-  animation: balance 1.5s ease-out;
+  animation: balance 1s ease-out;
   transform-origin: bottom left;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .word span:nth-child(2).active {
-  animation: shrinkjump 1s ease-in-out;
+  animation: shrinkjump 0.5s ease-in-out;
   transform-origin: bottom center;
 }
 
@@ -60,7 +60,7 @@
 }
 
 .word span:nth-child(3).active {
-  animation: falling 2s ease-out;
+  animation: falling 1s ease-out;
   transform-origin: bottom center;
 }
 
@@ -107,7 +107,7 @@
 }
 
 .word span:nth-child(5).active {
-  animation: toplong 1.5s linear;
+  animation: toplong 0.5s linear;
 }
 
 @keyframes toplong {
@@ -122,7 +122,7 @@
 }
 
 .word span:nth-child(6).active {
-  animation: swing 2s ease-in-out;
+  animation: swing 0.5s ease-in-out;
   transform-origin: top center;
 }
 
@@ -143,7 +143,7 @@
 }
 
 .word span:nth-child(7).active {
-  animation: bouncecolor 1.8s ease-out;
+  animation: bouncecolor 1s ease-out;
   transform-origin: bottom center;
 }
 
@@ -215,7 +215,7 @@ body {
 .fade-out {
   visibility: visible;
   opacity: 1;
-  transition: opacity 0.5s ease-out;
+  transition: opacity 1s ease-out;
 }
 
 .fade-out-active {
